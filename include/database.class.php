@@ -10,6 +10,7 @@ class database {
         $config = include __CONFIG__ . DIRECTORY_SEPARATOR . 'config.php';
         $this->prefix = $config['prefix'];
         $this->conn = mysqli_connect($config['host'], $config['db_user'], $config['db_password'], $config['db_name']);
+        mysqli_query($this->conn,"set names utf8");
     }
 
     static public function init() {

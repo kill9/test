@@ -109,7 +109,9 @@
                     var pass_confirmation = $("#pass_confirmation").val();
                     //提交表单数据
                     $.post("<?php U('index/verification', array(), 'admin'); ?>", {"user":user,"pass_confirmation":pass_confirmation},function(data){
-                        
+                        var dataObj=eval("("+data+")");
+                        alert(dataObj.msg);
+                        location.href=dataObj.url;
                     });
                 });
             });

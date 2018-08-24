@@ -99,22 +99,24 @@ class rbac {
             $role_id = explode(',', $role_id);
         }
         //查询所有的控制器
-        $nsql = 'select b.id,b.name from `p_access` as a join `p_node` as b on a.node_id = b.id where a.role_id in (' . $role_id . ') and b.pid = 0';
+        $nsql = 'select b.id,b.name from `p_access` as a join `p_node` as b on a.node_id = b.id where a.role_id in (' . $role_id . ') and b.type = 0';
         $allData = M()->exec_sql($nsql);
         $allData = array_column($allData, null, 'name');
-        $result = array();
+        
+        
         if ($allData) {
             //格式化权限数组
             foreach ($allData as $k => $v) {
                 //根据控制器查询方法
-                $f = M('node')->where('pid=' . $v['id'])->select();
+                $msql = 'select b.id,b.name from `p_access` as a join `p_node` as b on a.node_id = b.id where a.role_id in (' . $role_id . ') and b.type = 1 and pid='.$v['id'];
+                $f = M()->exec_sql($msql);
                 if ($f) {
                     $f_array = array_column($f, 'name');
-                    $allData[$k]['functons'] = $f_array;
+                    $allData[$k]['functions'] = $f_array;
                 }
             }
         }
-        return $result;
+        return $allData;
     }
 
 }

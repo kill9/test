@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Lorvens-Bootstrap Admin Dashboard and UI kit</title>
+        <title>后台</title>
         <!-- Fav  Icon Link -->
         <link rel="shortcut icon" type="image/png" href="<?php echo __STATIC__; ?>admin/images/fav.png">
         <!-- Bootstrap core CSS -->
@@ -111,7 +111,7 @@
                                         <span class="ti-settings"></span> Settings</a>
                                     <a class="dropdown-item" href="#">
                                         <span class="ti-help-alt"></span> Help</a>
-                                    <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="./index.php?f=admin&m=index&a=login">
                                         <span class="ti-power-off"></span> Logout</a>
                                 </div>
                             </li>

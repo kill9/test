@@ -21,13 +21,20 @@ class adminController extends Controller {
     //权限验证
     public function authentication() {
         //login,verification方法不做session校验
-        if (FOLDER_NAME == 'admin' && CONTROLLER_NAME == 'index' && !in_array(FUNCTION_NAME, array('login', 'verification'))) {
+        if (FOLDER_NAME == 'admin' && CONTROLLER_NAME == 'index' && !in_array(FUNCTION_NAME, array('login', 'verification','index'))) {
             //登录检查
             if (!$_SESSION['uid']) {
                 echo '<script>alert("未登录");location.href="index.php?f=admin&m=index&a=login"</script>';
                 die;
             } else {
                 //权限检查
+                if($_SESSION['uid'] !=1){
+                    $power = unserialize($_SESSION['power']);
+                    if(!$power[CONTROLLER_NAME] || !in_array($power[CONTROLLER_NAME]['functions'],FUNCTION_NAME)){
+                        echo '<script>alert("没有权限");location.href="index.php?f=admin&m=index&a=index"</script>';
+                        die;
+                    }  
+                }
             }
         }
     }
@@ -38,7 +45,6 @@ class adminController extends Controller {
         $pass_confirmation = post($_POST['pass_confirmation']);
         $userinfo = M('user')->where('username = "' . $user . '" and password = "' . md5($pass_confirmation) . '" and status = 1')->find();
         if ($userinfo) {
-            session_start();
             //登录成功后注册session
             $_SESSION['uid'] = $userinfo['id'];
             $_SESSION['uname'] = $userinfo['username'];
@@ -50,9 +56,9 @@ class adminController extends Controller {
             $rbac = new power();
             $power = $rbac->AuthSelect($data);
             $_SESSION['power'] = serialize($power);
-            echo json_encode(array('status' => 1, 'msg' => '登录成功'));
+            echo json_encode(array('status' => 1, 'msg' => '登录成功', 'url' => '/index.php?f=admin&m=index&a=index'));
         } else {
-            echo json_encode(array('status' => 0, 'msg' => '账号或密码错误'));
+            echo json_encode(array('status' => 0, 'msg' => '账号或密码错误', 'url' => '/index.php?f=admin&m=index&a=login'));
         }
     }
 
