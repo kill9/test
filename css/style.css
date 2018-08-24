@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; font-size:14px; color:#FFF; text-decoration:none;}
+body{ background: #292929;}
+.head{ width:1000px; margin:0 auto; }
+.head_title{ text-align:center; height:50px; line-height:50px;}
+.head_title span{  font-size:16px;}
+.head_title a{ float: right;}
+.head_title a:hover{ color: red;text-decoration: underline;}
+.table_body table{ width:100%; border-collapse:collapse;}
+.table_body table tr td{ height:22px; line-height:22px; text-align:center;}
+.table_body table tr td a:hover{ color: green; text-decoration: underline;}
