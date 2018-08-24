@@ -139,8 +139,8 @@
                     </div>
                     <!-- /Page Title -->
 
-                    <div class="row">
-                        <!-- Widget Item -->
+<!--                    <div class="row">
+                         Widget Item 
                         <div class="col-md-3">
                             <div class="widget-area lorvens-box-shadow color-red">
                                 <div class="widget-left">
@@ -152,8 +152,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                        <!-- Widget Item -->
+                         /Widget Item 
+                         Widget Item 
                         <div class="col-md-3">
                             <div class="widget-area lorvens-box-shadow color-blue">
                                 <div class="widget-left">
@@ -165,8 +165,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                        <!-- Widget Item -->
+                         /Widget Item 
+                         Widget Item 
                         <div class="col-md-3">
                             <div class="widget-area lorvens-box-shadow color-green">
                                 <div class="widget-left">
@@ -178,8 +178,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                        <!-- Widget Item -->
+                         /Widget Item 
+                         Widget Item 
                         <div class="col-md-3">
                             <div class="widget-area lorvens-box-shadow color-yellow">
                                 <div class="widget-left">
@@ -191,30 +191,30 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                    </div>
+                         /Widget Item 
+                    </div>-->
 
-                    <div class="row">
-                        <!-- Widget Item -->
+<!--                    <div class="row">
+                         Widget Item 
                         <div class="col-md-6">
                             <div class="widget-area-2 lorvens-box-shadow">
                                 <h3 class="widget-title">Projects Year by Year</h3>
                                 <div id="lineMorris" class="chart-home"></div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                        <!-- Widget Item -->
+                         /Widget Item 
+                         Widget Item 
                         <div class="col-md-6">
                             <div class="widget-area-2 lorvens-box-shadow">
                                 <h3 class="widget-title">Clients Year by Year</h3>
                                 <div id="barMorris" class="chart-home"></div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                    </div>
+                         /Widget Item 
+                    </div>-->
 
-                    <div class="row">
-                        <!-- Widget Item -->
+<!--                    <div class="row">
+                         Widget Item 
                         <div class="col-md-12">
                             <div class="widget-area-2 lorvens-box-shadow">
                                 <h3 class="widget-title">Payments</h3>
@@ -289,19 +289,19 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                    </div>
+                         /Widget Item 
+                    </div>-->
 
-                    <div class="row">
-                        <!-- Widget Item -->
+<!--                    <div class="row">
+                         Widget Item 
                         <div class="col-sm-6">
                             <div class="widget-area-2 lorvens-box-shadow">
                                 <h3 class="widget-title">Donut Chart</h3>
                                 <div id="donutMorris" class="chart-home"></div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                        <!-- Widget Item -->
+                         /Widget Item 
+                         Widget Item 
                         <div class="col-md-6">
                             <div class="widget-area-2 progress-status lorvens-box-shadow">
                                 <h3 class="widget-title">Project Status</h3>
@@ -324,21 +324,21 @@
 
                             </div>
                         </div>
-                        <!-- /Widget Item -->
+                         /Widget Item 
 
-                    </div>
+                    </div>-->
 
-                    <div class="row">
+<!--                    <div class="row">
 
-                        <!-- Widget Item -->
+                         Widget Item 
                         <div class="col-sm-12">
                             <div class="widget-area-2 lorvens-box-shadow">
                                 <h3 class="widget-title">Maps</h3>
                                 <div id="world-map-maker" class="big-world-mill"></div>
                             </div>
                         </div>
-                        <!-- /Widget Item -->
-                    </div>		
+                         /Widget Item 
+                    </div>		-->
                 </div>
                 <!-- /Main Content -->
             </div>

@@ -15,25 +15,26 @@ class adminController extends Controller {
         //进行权限验证
         $this->authentication();
         $this->assign('nav', $nav);
+        $this->public_left();
         //session_start();
     }
 
     //权限验证
     public function authentication() {
         //login,verification方法不做session校验
-        if (FOLDER_NAME == 'admin' && CONTROLLER_NAME == 'index' && !in_array(FUNCTION_NAME, array('login', 'verification','index'))) {
+        if (FOLDER_NAME == 'admin' && CONTROLLER_NAME == 'index' && !in_array(FUNCTION_NAME, array('login', 'verification', 'index'))) {
             //登录检查
             if (!$_SESSION['uid']) {
                 echo '<script>alert("未登录");location.href="index.php?f=admin&m=index&a=login"</script>';
                 die;
             } else {
                 //权限检查
-                if($_SESSION['uid'] !=1){
+                if ($_SESSION['uid'] != 1) {
                     $power = unserialize($_SESSION['power']);
-                    if(!$power[CONTROLLER_NAME] || !in_array($power[CONTROLLER_NAME]['functions'],FUNCTION_NAME)){
+                    if (!$power[CONTROLLER_NAME] || !in_array($power[CONTROLLER_NAME]['functions'], FUNCTION_NAME)) {
                         echo '<script>alert("没有权限");location.href="index.php?f=admin&m=index&a=index"</script>';
                         die;
-                    }  
+                    }
                 }
             }
         }
@@ -60,6 +61,12 @@ class adminController extends Controller {
         } else {
             echo json_encode(array('status' => 0, 'msg' => '账号或密码错误', 'url' => '/index.php?f=admin&m=index&a=login'));
         }
+    }
+
+    public function public_left() {
+        $power = unserialize($_SESSION['power']);
+        //dump($power);
+        $this->assign('power', $power);
     }
 
 }
