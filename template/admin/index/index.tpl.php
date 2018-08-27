@@ -111,236 +111,90 @@
                                         <span class="ti-settings"></span> Settings</a>
                                     <a class="dropdown-item" href="#">
                                         <span class="ti-help-alt"></span> Help</a>
-                                        <a class="dropdown-item" href="./index.php?f=admin&m=index&a=login">
+                                        <a class="dropdown-item" href="<?php echo U('Index/login')?>">
                                         <span class="ti-power-off"></span> Logout</a>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
-                <!-- /Top Navigation -->
-                <!-- Breadcrumb -->
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="index.html">
-                            <span class="ti-home"></span>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-                <!-- /Breadcrumb -->
-                <!-- Main Content -->
-                <div class="container-fluid home">
-                    <!-- Page Title -->
+<!--                <div class="container-fluid home">
+                     Page Title 
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="block-title">Quick Statistics</h3>
+                            <h3 class="block-title">测试中心</h3>
                         </div>
                     </div>
-                    <!-- /Page Title -->
-
-<!--                    <div class="row">
-                         Widget Item 
-                        <div class="col-md-3">
-                            <div class="widget-area lorvens-box-shadow color-red">
-                                <div class="widget-left">
-                                    <span class="ti-money"></span>
-                                </div>
-                                <div class="widget-right">
-                                    <h4 class="wiget-title">Open Payments</h4>
-                                    <span class="numeric color-red">$8348</span>
-                                </div>
-                            </div>
+                </div>-->
+                <div class="col-md-12">
+                    <div class="widget-area-2 lorvens-box-shadow">
+                        <h3 class="widget-title">Hoverable rows</h3>
+                        <div class="table-div">
+                            <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">First</th>
+                                            <th scope="col">Last</th>
+                                            <th scope="col">Handle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                                <th scope="row">3</th>
+                                                <td colspan="2">Larry the Bird</td>
+                                                <td>@twitter</td>
+                                        </tr>
+                                    </tbody>
+                            </table>
                         </div>
-                         /Widget Item 
-                         Widget Item 
-                        <div class="col-md-3">
-                            <div class="widget-area lorvens-box-shadow color-blue">
-                                <div class="widget-left">
-                                    <span class="ti-user"></span>
-                                </div>
-                                <div class="widget-right">
-                                    <h4 class="wiget-title">New Users</h4>
-                                    <span class="numeric color-blue">258</span>
-                                </div>
-                            </div>
-                        </div>
-                         /Widget Item 
-                         Widget Item 
-                        <div class="col-md-3">
-                            <div class="widget-area lorvens-box-shadow color-green">
-                                <div class="widget-left">
-                                    <span class="ti-bar-chart"></span>
-                                </div>
-                                <div class="widget-right">
-                                    <h4 class="wiget-title">Avg Revenue</h4>
-                                    <span class="numeric color-green">$6585</span>
-                                </div>
-                            </div>
-                        </div>
-                         /Widget Item 
-                         Widget Item 
-                        <div class="col-md-3">
-                            <div class="widget-area lorvens-box-shadow color-yellow">
-                                <div class="widget-left">
-                                    <span class="ti-thumb-up"></span>
-                                </div>
-                                <div class="widget-right">
-                                    <h4 class="wiget-title">Total Projects</h4>
-                                    <span class="numeric color-yellow">73</span>
-                                </div>
-                            </div>
-                        </div>
-                         /Widget Item 
-                    </div>-->
-
-<!--                    <div class="row">
-                         Widget Item 
-                        <div class="col-md-6">
-                            <div class="widget-area-2 lorvens-box-shadow">
-                                <h3 class="widget-title">Projects Year by Year</h3>
-                                <div id="lineMorris" class="chart-home"></div>
-                            </div>
-                        </div>
-                         /Widget Item 
-                         Widget Item 
-                        <div class="col-md-6">
-                            <div class="widget-area-2 lorvens-box-shadow">
-                                <h3 class="widget-title">Clients Year by Year</h3>
-                                <div id="barMorris" class="chart-home"></div>
-                            </div>
-                        </div>
-                         /Widget Item 
-                    </div>-->
-
-<!--                    <div class="row">
-                         Widget Item 
-                        <div class="col-md-12">
-                            <div class="widget-area-2 lorvens-box-shadow">
-                                <h3 class="widget-title">Payments</h3>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Products</th>
-                                                <th>Agent</th>
-                                                <th>Sales</th>
-                                                <th>Earnings</th>
-                                                <th>Technology</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Envato</td>
-                                                <td>Manoj Kumar</td>
-                                                <td>390</td>
-                                                <td>$400</td>
-                                                <td>
-                                                    <span class="badge badge-success">PHP</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Themeforest</td>
-                                                <td>John Deo</td>
-                                                <td>70</td>
-                                                <td>$3670</td>
-                                                <td>
-                                                    <span class="badge badge-warning">Java</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Codecanyon</td>
-                                                <td>Yokahona</td>
-                                                <td>150</td>
-                                                <td>$1400</td>
-                                                <td>
-                                                    <span class="badge badge-danger">Angular Js</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Videohive</td>
-                                                <td>Yokahona</td>
-                                                <td>150</td>
-                                                <td>$1400</td>
-                                                <td>
-                                                    <span class="badge badge-success">Python</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Themeforest</td>
-                                                <td>Yokahona</td>
-                                                <td>150</td>
-                                                <td>$1400</td>
-                                                <td>
-                                                    <span class="badge badge-warning">Dot Net</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Envato</td>
-                                                <td>Yokahona</td>
-                                                <td>150</td>
-                                                <td>$1400</td>
-                                                <td>
-                                                    <span class="badge badge-danger">Angular Js</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                         /Widget Item 
-                    </div>-->
-
-<!--                    <div class="row">
-                         Widget Item 
-                        <div class="col-sm-6">
-                            <div class="widget-area-2 lorvens-box-shadow">
-                                <h3 class="widget-title">Donut Chart</h3>
-                                <div id="donutMorris" class="chart-home"></div>
-                            </div>
-                        </div>
-                         /Widget Item 
-                         Widget Item 
-                        <div class="col-md-6">
-                            <div class="widget-area-2 progress-status lorvens-box-shadow">
-                                <h3 class="widget-title">Project Status</h3>
-                                <span>Project one</span>
-                                <div class="progress">
-                                    <div class="progress-bar width-pb10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span>Project Two</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success width-pb25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span>Project Three</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info width-pb50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span>Project Four</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning width-pb75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-
-                            </div>
-                        </div>
-                         /Widget Item 
-
-                    </div>-->
-
-<!--                    <div class="row">
-
-                         Widget Item 
-                        <div class="col-sm-12">
-                            <div class="widget-area-2 lorvens-box-shadow">
-                                <h3 class="widget-title">Maps</h3>
-                                <div id="world-map-maker" class="big-world-mill"></div>
-                            </div>
-                        </div>
-                         /Widget Item 
-                    </div>		-->
-                </div>
+                    </div>
+		</div>
                 <!-- /Main Content -->
+                <div class="col-md-12">
+                <div class="widget-area-2 lorvens-box-shadow">
+                    <div class="lorvens-widget">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- /Pagination Set -->
+		</div>
+                </div>
             </div>
             <!-- /Page Content -->
         </div>
