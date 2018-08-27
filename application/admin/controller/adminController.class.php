@@ -65,7 +65,6 @@ class adminController extends Controller {
 
     public function public_left() {
         $power = unserialize($_SESSION['power']);
-        //dump($power);
         $this->assign('power', $power);
     }
 

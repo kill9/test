@@ -14,7 +14,7 @@
             <?php foreach($child['functions'] as $key=>$value){?>
             <ul class="list-unstyled <?php echo $nav == $child['id'] ? 'show' : 'collapse'; ?>" aria-expanded="true" id="<?php echo $child['class'];?>">
                 <li>
-                    <a href="<?php echo U('uikits/typography', array('nav' => $child['id'])); ?>"><?php echo $value;?></a>
+                    <a href="<?php echo U("{$child['name']}/{$value['name']}", array('nav' => $child['id'])); ?>"><?php echo $value['title'];?></a>
                 </li>
             </ul>
             <?php }?>
