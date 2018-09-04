@@ -54,70 +54,7 @@
             <!-- Page Content -->
             <div id="content">
                 <!-- Top Navigation -->
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <span class="ti-menu" id="sidebarCollapse"></span>
-                        </div>
-                        <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="modal" data-target=".lorvens-modal-lg">
-                                    <span class="ti-search"></span>
-                                </a>
-                                <div class="modal fade lorvens-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-                                    <div class="modal-dialog modal-lorvens">
-                                        <div class="modal-content lorvens-box-shadow">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Serach Client/Project:</h5>
-                                                <span class="ti-close" data-dismiss="modal" aria-label="Close">
-                                                </span>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" id="search-term" placeholder="Type text here">
-                                                        <button type="button" class="btn btn-lorvens lorvens-bg">
-                                                            <span class="ti-location-arrow"></span> Search</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <span class="ti-announcement"></span>
-                                </a>
-                                <div class="dropdown-menu lorvens-box-shadow notifications animated flipInY">
-                                    <h5>Notifications</h5>
-                                    <a class="dropdown-item" href="#">
-                                        <span class="ti-comment-alt"></span> New User Registered</a>
-                                    <a class="dropdown-item" href="#">
-                                        <span class="ti-help-alt"></span> Client asked to send Quotaion</a>
-                                    <a class="dropdown-item" href="#">
-                                        <span class="ti-time"></span> Have schedule meeting today</a>
-                                    <a class="dropdown-item" href="#">
-                                        <span class="ti-comment-alt"></span> New User Registered</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <span class="ti-user"></span>
-                                </a>
-                                <div class="dropdown-menu lorvens-box-shadow profile animated flipInY">
-                                    <h5>John Willing</h5>
-                                    <a class="dropdown-item" href="#">
-                                        <span class="ti-settings"></span> Settings</a>
-                                    <a class="dropdown-item" href="#">
-                                        <span class="ti-help-alt"></span> Help</a>
-                                        <a class="dropdown-item" href="<?php echo U('Index/login')?>">
-                                        <span class="ti-power-off"></span> Logout</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                <?php include __TEMPLATE__ . 'admin/public/public_top.php'; ?>
 <!--                <div class="container-fluid home">
                      Page Title 
                     <div class="row">
@@ -128,35 +65,46 @@
                 </div>-->
                 <div class="col-md-12">
                     <div class="widget-area-2 lorvens-box-shadow">
-                        <h3 class="widget-title">Hoverable rows</h3>
+                        <h3 class="widget-title">节点管理</h3>
                         <div class="table-div">
                             <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">First</th>
-                                            <th scope="col">Last</th>
-                                            <th scope="col">Handle</th>
+                                            <th scope="col">控制器/方法名称</th>
+                                            <th scope="col">名称</th>
+                                            <th scope="col">排序</th>
+                                            <th scope="col">操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            foreach($list as $k => $v){
+                                        ?>
                                         <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                            <th scope="row"><?php echo $k + 1;?></th>
+                                            <td><?php echo $v['name'];?></td>
+                                            <td><?php echo $v['title'];?></td>
+                                            <td><?php echo $v['sort'];?></td>
+                                            <td><a href="<?php echo U("index/edit", array('id' => $v['id'])); ?>">修改</a>&nbsp;&nbsp;<a href="">删除</a></td>
                                         </tr>
+                                        <?php if($v['functions']){
+                                            foreach($v['functions'] as $vv){
+                                        ?>
                                         <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
+                                            <th scope="row"></th>
+                                            <td>=><?php echo $vv['name'];?></td>
+                                            <td><?php echo $vv['title'];?></td>
+                                            <td><?php echo $vv['sort'];?></td>
+                                            <td><a href="<?php echo U("index/edit", array('id' => $vv['id'])); ?>">修改</a>&nbsp;&nbsp;<a href="">删除</a></td>
                                         </tr>
-                                        <tr>
-                                                <th scope="row">3</th>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td>@twitter</td>
-                                        </tr>
+                                        <?php
+                                            }
+                                        }?>
+                                        <?php
+                                            }
+                                        ?>
+
                                     </tbody>
                             </table>
                         </div>
@@ -168,27 +116,7 @@
                     <div class="lorvens-widget">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                            <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
+                                <?php echo $page;?>
                             </ul>
                         </nav>
                     </div>

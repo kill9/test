@@ -54,6 +54,10 @@ class model {
             $order .= ' order by ';
             $order .= $this->order;
         }
+        if ($this->limit) {
+            $order .= ' limit ';
+            $order .= $this->limit;
+        }
         $sql = 'select ' . $select . ' from `' . $this->mysql->prefix . $this->table . '` ' . $where . $group . $order;
         return $sql;
     }
@@ -80,6 +84,18 @@ class model {
 
     public function errors() {
         return error_get_last();
+    }
+
+    public function limit($limit) {
+        $this->limit = $limit;
+        return $this;
+    }
+
+    public function count() {
+        $this->field = 'count(1) as counts';
+        $condition = $this->handle_where();
+        $find = $this->mysql->fetch($condition);
+        return $find['counts'];
     }
 
 }

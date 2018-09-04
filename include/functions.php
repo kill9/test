@@ -62,8 +62,12 @@ function get_debug_tree() {
 
 //get
 function get($get) {
+    intval($get);
     if (is_string($get) && $get) {
         return addslashes($get);
+    }
+    if (is_numeric($get)) {
+        return (int) $get;
     }
     return '';
 }
@@ -74,5 +78,8 @@ function post($post) {
     }
     if (is_string($post)) {
         return addslashes($post);
+    }
+    if (is_numeric($get)) {
+        return (int) $get;
     }
 }
