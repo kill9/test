@@ -63,7 +63,9 @@ class model {
     }
 
     public function where($where) {
-        $this->where = $where;
+        if ($where) {
+            $this->where = $where;
+        }
         return $this;
     }
 
@@ -96,6 +98,29 @@ class model {
         $condition = $this->handle_where();
         $find = $this->mysql->fetch($condition);
         return $find['counts'];
+    }
+
+    public function add($array) {
+        if (is_array($array)) {
+            $sql = $this->array_to_sql($array);
+        }
+    }
+
+    private function array_to_sql($array) {
+        $sql_where = '';
+        $tmp_k = array();
+        $tmp_v = array();
+        if (is_array($array)) {
+            foreach ($array as $k => $v) {
+                $tmp_k[] = '`' . $k . '`';
+                $tmp_v[] = '"' . $v . '"';
+            }
+            $tmp_k_srt = '(' . implode(',', $tmp_k) . ')';
+            $tmp_v_srt = '(' . implode(',', $tmp_v) . ')';
+            $sql = 'INSERT INTO `' . $this->mysql->prefix . $this->table . '` ' . $tmp_k_srt . ' VALUES ' . $tmp_v_srt . ';';
+            $find = $this->mysql->fetch($condition);
+            return $find;
+        }
     }
 
 }

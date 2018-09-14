@@ -55,7 +55,7 @@
                         <span class="ti-settings"></span> Settings</a>
                     <a class="dropdown-item" href="#">
                         <span class="ti-help-alt"></span> Help</a>
-                        <a class="dropdown-item" href="<?php echo U('Index/login')?>">
+                        <a class="dropdown-item" href="<?php echo U('Index/loginout')?>">
                         <span class="ti-power-off"></span> Logout</a>
                 </div>
             </li>

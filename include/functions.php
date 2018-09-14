@@ -27,22 +27,13 @@ function dump($array) {
 function M($model = '') {
     global $model_object;
     if ($model) {
-        $md5_model = md5($model);
-        if ($model_object[$md5_model]) {
-            $mod = $model_object[$md5_model];
+        $model_name = 'application' . DIRECTORY_SEPARATOR . FOLDER_NAME . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . $model . 'Model';
+        if (class_exists($model_name)) {
+            $mod = new $model_name();
             $mod->table = strtolower($model);
         } else {
-            $model_name = 'application' . DIRECTORY_SEPARATOR . FOLDER_NAME . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . $model . 'Model';
-            if (class_exists($model_name)) {
-                $mod = new $model_name();
-                $mod->table = strtolower($model);
-                $model_object[$md5_model] = $mod;
-            } else {
-                $model_name = 'core\model';
-                $mod = new $model_name();
-                $mod->table = strtolower($model);
-                $model_object[md5($model_name)] = $mod;
-            }
+            $model_name = 'core\model';
+            $mod = new $model_name();
         }
     } else {
         $model_name = 'core\model';

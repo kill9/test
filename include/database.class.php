@@ -10,7 +10,7 @@ class database {
         $config = include __CONFIG__ . DIRECTORY_SEPARATOR . 'config.php';
         $this->prefix = $config['prefix'];
         $this->conn = mysqli_connect($config['host'], $config['db_user'], $config['db_password'], $config['db_name']);
-        mysqli_query($this->conn,"set names utf8");
+        mysqli_query($this->conn, "set names utf8");
     }
 
     static public function init() {
@@ -27,7 +27,6 @@ class database {
 
     public function fetchall($sql) {
         $query = $this->query($sql);
-//        echo $sql.'<hr>';
         $result = array();
         if ($query) {
             while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {

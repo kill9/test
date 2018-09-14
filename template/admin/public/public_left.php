@@ -1,24 +1,25 @@
-<nav id="sidebar" class="lorvens-bg">
-    <div class="sidebar-header">
-        <a href="<?php echo U('index/index'); ?>"><img src="<?php echo __STATIC__; ?>admin/images/logo.png" class="logo" alt="logo"></a>
-        <a href="<?php echo U('index/index'); ?>"><img src="<?php echo __STATIC__; ?>admin/images/minimal-logo.png" class="minimal-logo" alt="logo"></a>
-    </div>
-    <ul class="list-unstyled components">
-        
-        
-       <?php foreach($power as $k=>$child) {?>
-        <li class="nav-level-one">
-            <a href="#<?php echo $child['class'];?>" data-toggle="collapse" aria-expanded="<?php echo $nav == $child['id'] ? 'true' : 'false'; ?>">
-                <span class="ti-layout-tab"></span> <?php echo $child['title'];?>
-            </a>    
-            <?php foreach($child['functions'] as $key=>$value){?>
-            <ul class="list-unstyled <?php echo $nav == $child['id'] ? 'show' : 'collapse'; ?>" aria-expanded="true" id="<?php echo $child['class'];?>">
+<div class="left-nav">
+    <div id="side-nav">
+        <ul id="nav">
+            <?php
+                foreach ($left_nav as $k => $v) {
+            ?>
                 <li>
-                    <a href="<?php echo U("{$child['name']}/{$value['name']}", array('nav' => $child['id'])); ?>"><?php echo $value['title'];?></a>
+                    <a href="javascript:;"><i class="iconfont">&#xe6b8;</i><cite><?php echo $v['controller']['name'];?></cite><i class="iconfont nav_right">&#xe697;</i></a>
+                    <ul class="sub-menu">
+                        <?php 
+                            foreach($v['functions'] as $kk=>$vv){
+                        ?>
+                        <li><a _href="index.php?f=admin&m=<?php echo $k;?>&a=<?php echo $vv['url'];?>"><i class="iconfont">&#xe6a7;</i><cite><?php echo $vv['name'];?></cite></a></li>
+                        <?php
+                            }
+                        ?>
+                    </ul>
                 </li>
-            </ul>
-            <?php }?>
-        </li>
-       <?php }?>
-    </ul>
-</nav>
+            <?php
+                }
+            ?>
+        </ul>
+    </div>
+</div>
+<!-- <div class="x-slide_left"></div> -->

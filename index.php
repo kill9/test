@@ -2,6 +2,7 @@
 
 header("Content-type:text/html;charset=utf-8");
 error_reporting(E_ALL & ~E_NOTICE);
+//error_reporting(0);
 session_start();
 //error_reporting(0);
 ini_set('date.timezone', 'Asia/Shanghai');
@@ -20,9 +21,9 @@ include_once __CROE__ . 'functions.php';
 //文件夹
 $f = get($_GET['f']) ? get($_GET['f']) : 'admin';
 //控制器
-$m = get($_GET['m']) ? get($_GET['m']) : 'index';
+$m = get($_GET['m']) ? get($_GET['m']) : 'public';
 //方法
-$a = get($_GET['a']) ? get($_GET['a']) : 'index';
+$a = get($_GET['a']) ? get($_GET['a']) : 'login';
 define('FOLDER_NAME', $f);
 define('CONTROLLER_NAME', $m);
 define('FUNCTION_NAME', $a);
