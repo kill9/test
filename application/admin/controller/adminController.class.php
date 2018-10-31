@@ -44,6 +44,7 @@ class adminController extends Controller {
         $user = post($_POST['user']);
         $pass_confirmation = post($_POST['pass_confirmation']);
         $userinfo = M('user')->where('username = "' . $user . '" and password = "' . md5($pass_confirmation) . '" and status = 1')->find();
+        var_dump($userinfo);die;
         if ($userinfo) {
             //登录成功后注册session
             $_SESSION['uid'] = $userinfo['id'];

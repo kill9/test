@@ -26,21 +26,16 @@ function dump($array) {
 //获取model对象
 function M($model = '') {
     global $model_object;
-    if ($model) {
-        $model_name = 'application' . DIRECTORY_SEPARATOR . FOLDER_NAME . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . $model . 'Model';
-        if (class_exists($model_name)) {
-            $mod = new $model_name();
-            $mod->table = strtolower($model);
-        } else {
-            $model_name = 'core\model';
-            $mod = new $model_name();
-        }
+    $model_name = 'application' . DIRECTORY_SEPARATOR . FOLDER_NAME . DIRECTORY_SEPARATOR . 'model' . DIRECTORY_SEPARATOR . $model . 'Model';
+    if ($model && class_exists($model_name)) {
+        $model_name = 'core\model';
+        $mod = new $model_name();
     } else {
         $model_name = 'core\model';
         $mod = new $model_name();
         $mod->table = strtolower(CONTROLLER_NAME);
-        $model_object[md5($model_name)] = $mod;
     }
+    $mod->table = strtolower($model);
     return $mod;
 }
 

@@ -31,7 +31,10 @@
 //                                
 //                            });
                             layer.msg(dataObj.msg);
-                            location.href = dataObj.url;
+                            if(dataObj.url){
+                                location.href = dataObj.url;
+                            }
+                            
                         });
 //                        layer.msg(JSON.stringify(data.field), function () {
 //                            location.href = 'index.html'
